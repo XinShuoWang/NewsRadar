@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>ArXiv DB</title>
+    <item>
+      <title>Memory governance for query engines</title>
+      <link>https://example.com/papers/memory-governance</link>
+      <description>How to manage memory pressure in query engines.</description>
+      <author>Alice Example</author>
+      <pubDate>Mon, 01 Apr 2024 10:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

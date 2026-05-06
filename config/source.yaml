@@ -1,0 +1,61 @@
+# 第一批正式来源。
+# 设计原则：
+# 1. 优先官方、权威、更新稳定
+# 2. 优先能被当前解析器直接消费的 feed / blog list 入口
+# 3. 先覆盖论文、OLAP/查询引擎、数据库工程博客三大类
+# 4. 论文以 arXiv、OpenAlex、Semantic Scholar 为主，优先 paper-level 结果
+sources:
+  - name: arxiv-db-systems-memory
+    kind: paper
+    parser: feed
+    url: https://export.arxiv.org/api/query?search_query=%28cat%3Acs.DB+OR+cat%3Acs.DC+OR+cat%3Acs.OS%29+AND+%28all%3A%22memory+management%22+OR+all%3Aspill+OR+all%3Aallocator+OR+all%3A%22query+execution%22+OR+all%3Avectorized+OR+all%3Aruntime%29&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending
+
+  - name: arxiv-db-recent
+    kind: paper
+    parser: feed
+    url: https://export.arxiv.org/api/query?search_query=cat%3Acs.DB&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending
+
+  - name: arxiv-dc-execution-memory
+    kind: paper
+    parser: feed
+    url: https://export.arxiv.org/api/query?search_query=cat%3Acs.DC+AND+%28all%3Aspill+OR+all%3A%22query+execution%22+OR+all%3A%22memory+management%22+OR+all%3Aruntime%29&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending
+
+  - name: openalex-systems-memory
+    kind: paper
+    parser: openalex
+    url: https://api.openalex.org/works?search=%22memory+management%22+spill+allocator+%22query+execution%22+vectorized+runtime+database+olap&filter=type:article|proceedings-article|preprint,language:en&sort=publication_date:desc&per-page=50
+
+  - name: openalex-db-execution
+    kind: paper
+    parser: openalex
+    url: https://api.openalex.org/works?search=%22query+engine%22+database+olap+execution+runtime+spill+shuffle+sort+aggregation&filter=type:article|proceedings-article|preprint,language:en&sort=publication_date:desc&per-page=50
+
+  - name: semantic-scholar-systems-memory
+    kind: paper
+    parser: semanticscholar
+    url: https://api.semanticscholar.org/graph/v1/paper/search/bulk?query=%28systems+%7C+distributed+%7C+database+%7C+olap%29+%2B%28memory+%7C+spill+%7C+runtime+%7C+vectorized%29&fields=title,url,abstract,publicationDate,openAccessPdf,externalIds,authors&sort=publicationDate:desc&year=2025-
+
+  - name: semantic-scholar-db-engine
+    kind: paper
+    parser: semanticscholar
+    url: https://api.semanticscholar.org/graph/v1/paper/search/bulk?query=%28database+%7C+olap+%7C+%22query+engine%22%29+%2B%28execution+%7C+runtime+%7C+spill+%7C+vectorized+%7C+scheduler%29&fields=title,url,abstract,publicationDate,openAccessPdf,externalIds,authors&sort=publicationDate:desc&year=2025-
+
+  - name: duckdb-engineering-blog
+    kind: blog
+    parser: feed
+    url: https://duckdb.org/feed.xml
+
+  - name: clickhouse-blog
+    kind: blog
+    parser: html
+    url: https://clickhouse.com/blog
+
+  - name: trino-blog
+    kind: blog
+    parser: html
+    url: https://trino.io/blog/
+
+  - name: starrocks-blog
+    kind: blog
+    parser: html
+    url: https://www.starrocks.io/blog

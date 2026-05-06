@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "items": [
+    {
+      "url": "https://example.com/paper",
+      "is_relevant": true,
+      "is_duplicate": false,
+      "score": 0.95,
+      "tags": ["memory", "execution"],
+      "summary_zh": "讨论查询引擎中的内存准入与 spill 控制。",
+      "why_it_matters_zh": "适合关注内存治理与执行器资源控制的工程师。"
+    }
+  ]
+}
