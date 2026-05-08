@@ -41,6 +41,85 @@ def test_run_llm_pipeline_returns_ranked_items():
     assert result.items[0].summary_zh.startswith("讨论查询引擎")
 
 
+def test_run_llm_pipeline_batches_items_and_merges_ranked_results():
+    items = [
+        RawItem(
+            source_name="arxiv-db",
+            source_kind="paper",
+            title=f"Memory governance paper {index}",
+            url=f"https://example.com/paper-{index}",
+            published_at=datetime(2026, 4, 17, 9, index, 0),
+            summary="A paper about memory admission and spill control.",
+        )
+        for index in range(5)
+    ]
+    batch_titles = []
+
+    def fake_client(payload):
+        titles = [
+            item.title
+            for item in items
+            if item.title in payload["user_prompt"]
+        ]
+        batch_titles.append(titles)
+        return {
+            "status": "ok",
+            "items": [
+                {
+                    "url": f"https://example.com/selected-{len(batch_titles)}",
+                    "is_relevant": True,
+                    "is_duplicate": False,
+                    "score": 1.0 - len(batch_titles) / 10,
+                    "tags": ["memory"],
+                    "summary_zh": f"第 {len(batch_titles)} 批摘要。",
+                    "why_it_matters_zh": "原因。",
+                }
+            ],
+        }
+
+    result = run_llm_pipeline(items=items, llm_client=fake_client, batch_size=2)
+
+    assert result.status == "ok"
+    assert batch_titles == [
+        ["Memory governance paper 0", "Memory governance paper 1"],
+        ["Memory governance paper 2", "Memory governance paper 3"],
+        ["Memory governance paper 4"],
+    ]
+    assert [item.url for item in result.items] == [
+        "https://example.com/selected-1",
+        "https://example.com/selected-2",
+        "https://example.com/selected-3",
+    ]
+
+
+def test_run_llm_pipeline_logs_batch_failure_reason(caplog):
+    items = [
+        RawItem(
+            source_name="arxiv-db",
+            source_kind="paper",
+            title=f"Memory governance paper {index}",
+            url=f"https://example.com/paper-{index}",
+            published_at=datetime(2026, 4, 17, 9, index, 0),
+            summary="A paper about memory admission and spill control.",
+        )
+        for index in range(3)
+    ]
+    calls = 0
+
+    def fake_client(payload):
+        nonlocal calls
+        calls += 1
+        if calls == 2:
+            return {"status": "error", "reason": "timeout"}
+        return {"status": "ok", "items": []}
+
+    result = run_llm_pipeline(items=items, llm_client=fake_client, batch_size=2)
+
+    assert result.status == "unavailable"
+    assert result.error_reason == "timeout"
+    assert "LLM 批次失败: batch=2/2, reason=timeout" in caplog.text
+
+
 def test_run_llm_pipeline_marks_unavailable_on_failure():
     result = run_llm_pipeline(items=[], llm_client=lambda payload: {"status": "error", "reason": "timeout"})
     assert result.status == "unavailable"

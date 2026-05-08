@@ -1,3 +1,5 @@
+import requests
+
 from newsradar.llm.client import OpenAiCompatibleClient
 
 
@@ -104,3 +106,62 @@ def test_openai_compatible_client_supports_gemini_openai_compatible_endpoint(mon
     assert captured["headers"] == {"Authorization": "Bearer gemini-secret"}
     assert captured["timeout"] == 60
     assert captured["json"]["model"] == "gemini-3-flash-preview"
+
+
+def test_openai_compatible_client_reports_timeout(monkeypatch):
+    def fake_post(url, headers, json, timeout):
+        raise requests.Timeout("request timed out")
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "timeout"}
+
+
+def test_openai_compatible_client_reports_http_error(monkeypatch):
+    class FakeResponse:
+        status_code = 429
+        text = "quota exceeded"
+
+        def raise_for_status(self):
+            raise requests.HTTPError("429 Client Error", response=self)
+
+    def fake_post(url, headers, json, timeout):
+        return FakeResponse()
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "http_429"}
+
+
+def test_openai_compatible_client_reports_invalid_content_json(monkeypatch):
+    class FakeResponse:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"choices": [{"message": {"content": "not json"}}]}
+
+    def fake_post(url, headers, json, timeout):
+        return FakeResponse()
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "invalid_content_json"}

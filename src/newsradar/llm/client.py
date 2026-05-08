@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import json
+import logging
 
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 class OpenAiCompatibleClient:
@@ -36,9 +39,17 @@ class OpenAiCompatibleClient:
         if not messages:
             return {"status": "error", "reason": "invalid_prompt"}
 
+        url = f"{self.base_url}/chat/completions"
+        logger.info(
+            "LLM 请求开始: model=%s, base_url=%s, timeout=%ss",
+            self.model,
+            self.base_url,
+            self.timeout_seconds,
+        )
+
         try:
             response = requests.post(
-                f"{self.base_url}/chat/completions",
+                url,
                 headers={"Authorization": f"Bearer {self.api_key}"},
                 json={
                     "model": self.model,
@@ -48,24 +59,56 @@ class OpenAiCompatibleClient:
                 timeout=self.timeout_seconds,
             )
             response.raise_for_status()
+        except requests.Timeout:
+            logger.warning("LLM 请求超时: model=%s, timeout=%ss", self.model, self.timeout_seconds)
+            return {"status": "error", "reason": "timeout"}
+        except requests.HTTPError as exc:
+            status_code = getattr(getattr(exc, "response", None), "status_code", None)
+            reason = f"http_{status_code}" if status_code else "http_error"
+            logger.warning("LLM HTTP 错误: model=%s, reason=%s", self.model, reason)
+            return {"status": "error", "reason": reason}
+        except requests.RequestException as exc:
+            logger.warning("LLM 请求异常: model=%s, error=%s", self.model, exc.__class__.__name__)
+            return {"status": "error", "reason": "request_error"}
+
+        try:
             payload = response.json()
+        except ValueError:
+            logger.warning("LLM 响应体不是合法 JSON: model=%s", self.model)
+            return {"status": "error", "reason": "invalid_response_json"}
+
+        try:
             content = payload["choices"][0]["message"]["content"]
-            if isinstance(content, dict):
-                parsed_content = content
-            else:
+        except (KeyError, IndexError, TypeError):
+            logger.warning("LLM 响应缺少 content 字段: model=%s", self.model)
+            return {"status": "error", "reason": "missing_content"}
+
+        if isinstance(content, dict):
+            parsed_content = content
+        else:
+            try:
                 parsed_content = json.loads(content)
-        except (requests.RequestException, KeyError, IndexError, TypeError, ValueError, json.JSONDecodeError):
-            return {"status": "error", "reason": "invalid_response"}
+            except (TypeError, json.JSONDecodeError):
+                logger.warning("LLM content 不是合法 JSON: model=%s", self.model)
+                return {"status": "error", "reason": "invalid_content_json"}
 
         if not isinstance(parsed_content, dict):
-            return {"status": "error", "reason": "invalid_response"}
+            logger.warning("LLM content JSON 顶层不是对象: model=%s", self.model)
+            return {"status": "error", "reason": "invalid_content_schema"}
 
         status = parsed_content.get("status", "ok")
         if status == "ok":
+            items = parsed_content.get("items", [])
+            logger.info(
+                "LLM 请求完成: model=%s, returned_items=%s",
+                self.model,
+                len(items) if isinstance(items, list) else "invalid",
+            )
             return {
                 "status": "ok",
-                "items": parsed_content.get("items", []),
+                "items": items,
             }
 
         reason = parsed_content.get("reason", "unknown")
+        logger.warning("LLM 返回错误状态: model=%s, reason=%s", self.model, reason)
         return {"status": "error", "reason": reason}

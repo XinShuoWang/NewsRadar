@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 from typing import Any
 
 import yaml
 
 from newsradar.models import LlmPipelineResult, RankedItem
+
+logger = logging.getLogger(__name__)
+DEFAULT_BATCH_SIZE = 50
 
 
 def is_llm_pipeline_success(llm_result: Any) -> bool:
@@ -31,36 +35,81 @@ def load_prompt_config(path: str | Path) -> dict[str, str]:
     }
 
 
-def run_llm_pipeline(items, llm_client, prompt_config: dict[str, str] | None = None):
+def run_llm_pipeline(
+    items,
+    llm_client,
+    prompt_config: dict[str, str] | None = None,
+    batch_size: int = DEFAULT_BATCH_SIZE,
+):
     """把原始条目送入 LLM，并整理成排序后的结果。"""
 
-    payload = _build_prompt_payload(items, prompt_config=prompt_config)
-    response = _invoke_llm_client(llm_client, payload)
-    normalized_response = _normalize_response(response)
-    if normalized_response["status"] != "ok":
-        return LlmPipelineResult(status="unavailable", error_reason=normalized_response["reason"])
+    item_list = list(items or [])
+    effective_batch_size = max(1, int(batch_size or DEFAULT_BATCH_SIZE))
+    batches = list(_iter_batches(item_list, effective_batch_size)) or [[]]
+    logger.info(
+        "LLM 流水线批处理开始: total_items=%s, batch_size=%s, batches=%s",
+        len(item_list),
+        effective_batch_size,
+        len(batches),
+    )
 
     ranked_items = []
-    for item in normalized_response["items"]:
-        validation_error = _validate_ranked_item(item)
-        if validation_error is not None:
-            return LlmPipelineResult(status="unavailable", error_reason=validation_error)
+    for batch_index, batch_items in enumerate(batches, start=1):
+        payload = _build_prompt_payload(batch_items, prompt_config=prompt_config)
+        logger.info(
+            "LLM 批次开始: batch=%s/%s, items=%s",
+            batch_index,
+            len(batches),
+            len(batch_items),
+        )
+        response = _invoke_llm_client(llm_client, payload)
+        normalized_response = _normalize_response(response)
+        if normalized_response["status"] != "ok":
+            reason = normalized_response["reason"]
+            logger.warning("LLM 批次失败: batch=%s/%s, reason=%s", batch_index, len(batches), reason)
+            return LlmPipelineResult(status="unavailable", error_reason=reason)
 
-        if item["is_relevant"] and not item["is_duplicate"]:
-            ranked_items.append(
-                RankedItem(
-                    url=item["url"],
-                    score=float(item["score"]),
-                    tags=list(item["tags"]),
-                    summary_zh=item["summary_zh"],
-                    why_it_matters_zh=item["why_it_matters_zh"],
-                    is_relevant=item["is_relevant"],
-                    is_duplicate=item["is_duplicate"],
+        selected_count = 0
+        for item in normalized_response["items"]:
+            validation_error = _validate_ranked_item(item)
+            if validation_error is not None:
+                logger.warning(
+                    "LLM 批次结果校验失败: batch=%s/%s, reason=%s",
+                    batch_index,
+                    len(batches),
+                    validation_error,
                 )
-            )
+                return LlmPipelineResult(status="unavailable", error_reason=validation_error)
+
+            if item["is_relevant"] and not item["is_duplicate"]:
+                selected_count += 1
+                ranked_items.append(
+                    RankedItem(
+                        url=item["url"],
+                        score=float(item["score"]),
+                        tags=list(item["tags"]),
+                        summary_zh=item["summary_zh"],
+                        why_it_matters_zh=item["why_it_matters_zh"],
+                        is_relevant=item["is_relevant"],
+                        is_duplicate=item["is_duplicate"],
+                    )
+                )
+        logger.info(
+            "LLM 批次完成: batch=%s/%s, returned_items=%s, selected_items=%s",
+            batch_index,
+            len(batches),
+            len(normalized_response["items"]),
+            selected_count,
+        )
 
     ranked_items.sort(key=lambda current: current.score, reverse=True)
+    logger.info("LLM 流水线批处理完成: selected_count=%s", len(ranked_items))
     return LlmPipelineResult(status="ok", items=ranked_items)
+
+
+def _iter_batches(items: list[Any], batch_size: int):
+    for start in range(0, len(items), batch_size):
+        yield items[start : start + batch_size]
 
 
 def _build_prompt_payload(items: Any, prompt_config: dict[str, str] | None = None) -> dict[str, str]:
@@ -106,7 +155,7 @@ def _normalize_response(response: Any) -> dict[str, Any]:
     """把各种 LLM 返回值收敛成统一结构。"""
 
     if not isinstance(response, dict):
-        return {"status": "error", "reason": "invalid_response"}
+        return {"status": "error", "reason": "invalid_response_type"}
 
     status = response.get("status")
     if status != "ok":
@@ -117,7 +166,7 @@ def _normalize_response(response: Any) -> dict[str, Any]:
 
     items = response.get("items")
     if not isinstance(items, list):
-        return {"status": "error", "reason": "invalid_response"}
+        return {"status": "error", "reason": "invalid_items"}
 
     return {"status": "ok", "items": items}
 
@@ -126,25 +175,25 @@ def _validate_ranked_item(item: Any) -> str | None:
     """校验单个条目结构，返回错误原因或 None。"""
 
     if not isinstance(item, dict):
-        return "invalid_response"
+        return "invalid_item_type"
 
     required_str_fields = ("url", "summary_zh", "why_it_matters_zh")
     for field_name in required_str_fields:
         if not isinstance(item.get(field_name), str) or not item[field_name]:
-            return "invalid_response"
+            return f"invalid_item_{field_name}"
 
     if not isinstance(item.get("score"), (int, float)):
-        return "invalid_response"
+        return "invalid_item_score"
 
     tags = item.get("tags")
     if not isinstance(tags, list) or any(not isinstance(tag, str) for tag in tags):
-        return "invalid_response"
+        return "invalid_item_tags"
 
     if not isinstance(item.get("is_relevant"), bool):
-        return "invalid_response"
+        return "invalid_item_is_relevant"
 
     if not isinstance(item.get("is_duplicate"), bool):
-        return "invalid_response"
+        return "invalid_item_is_duplicate"
 
     return None
 
