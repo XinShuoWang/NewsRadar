@@ -217,8 +217,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-05-12": [
-        "url:https://duckdb.org/2026/03/11/big-data-on-the-cheapest-macbook.html",
+      "2026-05-13": [
         "url:https://duckdb.org/2026/03/20/duckdb-extensionkit-csharp.html",
         "url:https://duckdb.org/2026/03/23/announcing-duckdb-151.html",
         "url:https://duckdb.org/2026/04/01/duckdb-now-speaks-dutch.html",
@@ -227,7 +226,11 @@
         "url:https://duckdb.org/2026/04/13/announcing-duckdb-152.html",
         "url:https://duckdb.org/2026/05/04/ducklake-dataframe.html",
         "url:https://duckdb.org/2026/05/07/delta-uc-updates.html",
-        "url:https://duckdb.org/2026/05/08/announcing-duckcon7.html"
+        "url:https://duckdb.org/2026/05/08/announcing-duckcon7.html",
+        "url:https://duckdb.org/2026/05/12/quack-remote-protocol.html"
+      ],
+      "2026-05-12": [
+        "url:https://duckdb.org/2026/03/11/big-data-on-the-cheapest-macbook.html"
       ],
       "2026-05-08": [
         "url:https://duckdb.org/2026/03/09/announcing-duckdb-150.html"
@@ -237,7 +240,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-05-12": [
+      "2026-05-13": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:http://mediatum.ub.tum.de/node?id=1306494",
@@ -248,7 +251,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-05-12": [
+      "2026-05-13": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.5445/ir/1000055675",
         "url:https://doi.org/10.5075/epfl-thesis-7222",
@@ -256,7 +259,7 @@
       ]
     },
     "semantic-scholar-db-engine": {
-      "2026-05-12": [
+      "2026-05-13": [
         "url:https://doi.org/10.48550/arXiv.2602.14922",
         "url:https://doi.org/10.48550/arXiv.2602.15553",
         "url:https://doi.org/10.1109/TCSET65181.2026.11461145",
@@ -1375,18 +1378,7 @@
       ]
     },
     "semantic-scholar-systems-memory": {
-      "2026-05-12": [
-        "url:https://doi.org/10.1109/JSEN.2026.3677640",
-        "url:https://doi.org/10.1515/joc-2026-0011",
-        "url:https://doi.org/10.1016/j.ssc.2026.116416",
-        "url:https://doi.org/10.31272/jeasd.3242",
-        "url:https://doi.org/10.1109/TCST.2026.3660313",
-        "url:https://doi.org/10.9734/ajeba/2026/v26i52259",
-        "url:https://doi.org/10.3390/buildings16091811",
-        "url:https://doi.org/10.1109/TSG.2025.3650457",
-        "url:https://doi.org/10.1016/j.jss.2026.112928",
-        "url:https://doi.org/10.1016/j.engappai.2026.114313",
-        "url:https://doi.org/10.1016/j.jisa.2026.104406",
+      "2026-05-13": [
         "url:https://doi.org/10.54884/1815-7041-2026-86-1-16-24",
         "url:https://doi.org/10.3390/a19050345",
         "url:https://doi.org/10.33425/3066-1226.1279",
@@ -1975,7 +1967,6 @@
         "url:https://arxiv.org/abs/2605.04773",
         "url:https://arxiv.org/abs/2605.04450",
         "url:https://doi.org/10.54254/2755-2721/2026.gu33197",
-        "url:https://doi.org/10.64898/2026.05.03.722503",
         "url:https://doi.org/10.64898/2026.05.02.720486",
         "url:https://doi.org/10.1177/01617346261441787",
         "url:https://arxiv.org/abs/2605.04677",
@@ -2172,6 +2163,8 @@
         "url:https://arxiv.org/abs/2605.07576",
         "url:https://doi.org/10.7250/conect.2026.037",
         "url:https://doi.org/10.62411/faith.3048-3719-363",
+        "url:https://doi.org/10.1101/2025.06.18.660380",
+        "url:https://doi.org/10.64898/2026.05.06.723301",
         "url:https://arxiv.org/abs/2605.07541",
         "url:https://arxiv.org/abs/2605.07417",
         "url:https://doi.org/10.1002/lpor.202502765",
@@ -2182,6 +2175,7 @@
         "url:https://arxiv.org/abs/2605.07954",
         "url:https://doi.org/10.3390/app16104633",
         "url:https://doi.org/10.1002/mma.70783",
+        "url:https://doi.org/10.64898/2026.05.05.722858",
         "url:https://arxiv.org/abs/2605.07217",
         "url:https://doi.org/10.56748/ejse.26857",
         "url:https://doi.org/10.1007/s40430-026-06408-4",
@@ -2209,9 +2203,11 @@
         "url:https://arxiv.org/abs/2605.07302",
         "url:https://doi.org/10.47392/irjaem.2026.0234",
         "url:https://doi.org/10.55041/ijsmt.v2i5.134",
+        "url:https://doi.org/10.64898/2026.05.03.722503",
         "url:https://doi.org/10.1051/0004-6361/202659694",
         "url:https://arxiv.org/abs/2605.07535",
         "url:https://doi.org/10.1017/aer.2026.10158",
+        "url:https://doi.org/10.64898/2026.05.05.721149",
         "url:https://doi.org/10.3389/fdata.2026.1807184",
         "url:https://doi.org/10.3389/fnhum.2026.1774230",
         "url:https://doi.org/10.71107/dh3px571",
@@ -2226,13 +2222,16 @@
         "url:https://arxiv.org/abs/2605.07885",
         "url:https://arxiv.org/abs/2605.07750",
         "url:https://doi.org/10.3389/fnagi.2026.1778992",
+        "url:https://doi.org/10.64898/2026.04.22.720036",
         "url:https://arxiv.org/abs/2605.07133",
         "url:https://doi.org/10.1186/s12974-026-03835-x",
+        "url:https://doi.org/10.64898/2026.05.06.723314",
         "url:https://doi.org/10.54929/2786-5738-2026-24-07-01",
         "url:https://arxiv.org/abs/2605.07594",
         "url:https://doi.org/10.1145/3813113",
         "url:https://arxiv.org/abs/2605.07149",
         "url:https://doi.org/10.1038/s41467-026-72640-0",
+        "url:https://doi.org/10.64898/2026.05.05.722845",
         "url:https://arxiv.org/abs/2605.07770",
         "url:https://doi.org/10.1142/s166436072650013x",
         "url:https://doi.org/10.1093/lambio/ovag046",
@@ -2249,11 +2248,13 @@
         "url:https://arxiv.org/abs/2605.07068",
         "url:https://doi.org/10.55041/ijcope.v2i5.278",
         "url:https://doi.org/10.1007/s10973-026-15537-w",
+        "url:https://doi.org/10.64898/2026.02.01.703176",
         "url:https://doi.org/10.47392/irjaem.2026.0257",
         "url:https://doi.org/10.47392/irjaem.2026.0270",
         "url:https://doi.org/10.1017/9781009687119",
         "url:https://doi.org/10.1177/13872877261445561",
         "url:https://doi.org/10.47392/irjaem.2026.0255",
+        "url:https://doi.org/10.64898/2026.05.05.723090",
         "url:https://doi.org/10.1002/adma.73338",
         "url:https://doi.org/10.1002/adfm.75765",
         "url:https://doi.org/10.1029/2025jh001011",
@@ -2265,6 +2266,7 @@
         "url:https://doi.org/10.1007/s10207-026-01261-x",
         "url:https://doi.org/10.1007/s12016-026-09165-3",
         "url:https://doi.org/10.55041/isjem07296",
+        "url:https://doi.org/10.64898/2026.05.08.723078",
         "url:https://doi.org/10.66893/hevruta.2026.alb.211-226",
         "url:https://doi.org/10.47392/irjaem.2026.0272",
         "url:https://doi.org/10.55041/ijcope.v2i5.306",
@@ -2279,6 +2281,7 @@
         "url:https://doi.org/10.1108/ijcst-05-2025-0088",
         "url:https://doi.org/10.1108/rs-03-2026-0015",
         "url:https://doi.org/10.1108/sef-07-2025-0530",
+        "url:https://doi.org/10.64898/2026.05.09.26352789",
         "url:https://doi.org/10.1109/JIOT.2026.3666736",
         "url:https://doi.org/10.1109/JIOT.2025.3620478",
         "url:https://doi.org/10.1109/JLT.2026.3670220",
@@ -2376,6 +2379,19 @@
         "url:https://doi.org/10.29333/ejosdr/18318",
         "url:https://doi.org/10.1016/j.chaos.2026.118479",
         "url:https://doi.org/10.1109/TASC.2026.3679652"
+      ],
+      "2026-05-12": [
+        "url:https://doi.org/10.1109/JSEN.2026.3677640",
+        "url:https://doi.org/10.1515/joc-2026-0011",
+        "url:https://doi.org/10.1016/j.ssc.2026.116416",
+        "url:https://doi.org/10.31272/jeasd.3242",
+        "url:https://doi.org/10.1109/TCST.2026.3660313",
+        "url:https://doi.org/10.9734/ajeba/2026/v26i52259",
+        "url:https://doi.org/10.3390/buildings16091811",
+        "url:https://doi.org/10.1109/TSG.2025.3650457",
+        "url:https://doi.org/10.1016/j.jss.2026.112928",
+        "url:https://doi.org/10.1016/j.engappai.2026.114313",
+        "url:https://doi.org/10.1016/j.jisa.2026.104406"
       ],
       "2026-05-11": [
         "url:https://doi.org/10.22214/ijraset.2026.81303",
@@ -3136,7 +3152,6 @@
         "url:https://doi.org/10.3390/en19092066",
         "url:https://doi.org/10.1088/1361-6501/ae6470",
         "url:https://doi.org/10.1371/journal.pone.0342331",
-        "url:https://doi.org/10.64898/2026.04.22.720036",
         "url:https://doi.org/10.1007/s11104-026-08515-6",
         "url:https://doi.org/10.61173/mbpp4946",
         "url:https://doi.org/10.69836/tech.v2i1.748",
