@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import logging
+import time
 from collections.abc import Callable
+from urllib.parse import urlparse
 
 import requests
 
@@ -15,6 +17,7 @@ from newsradar.models import RawItem, SourceConfig
 
 
 logger = logging.getLogger(__name__)
+SAME_DOMAIN_SLEEP_SECONDS = 3.0
 
 Parser = Callable[[SourceConfig, str], list[RawItem]]
 
@@ -28,10 +31,19 @@ def collect_raw_items(
     fetch = fetcher or fetch_url_text
     items: list[RawItem] = []
     errors: list[dict[str, str]] = []
+    previous_domain = ""
 
     for source in sources:
         try:
             logger.info("开始抓取来源: %s", source.name)
+            current_domain = _hostname(source.url)
+            if current_domain and current_domain == previous_domain:
+                logger.info(
+                    "同域名连续请求，等待 %.1fs: domain=%s",
+                    SAME_DOMAIN_SLEEP_SECONDS,
+                    current_domain,
+                )
+                time.sleep(SAME_DOMAIN_SLEEP_SECONDS)
             text = fetch(source.url)
             parsed_items = parse_source_items(source, text)
             items.extend(parsed_items)
@@ -52,6 +64,8 @@ def collect_raw_items(
                     "error": error,
                 }
             )
+        finally:
+            previous_domain = _hostname(source.url)
 
     return items, errors
 
@@ -71,6 +85,10 @@ def fetch_url_text(url: str) -> str:
     response = requests.get(url, timeout=30)
     response.raise_for_status()
     return response.text
+
+
+def _hostname(url: str) -> str:
+    return urlparse(url).hostname or ""
 
 
 def _parser_registry() -> dict[str, Parser]:

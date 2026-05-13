@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 
 import requests
 
@@ -13,11 +14,21 @@ logger = logging.getLogger(__name__)
 class OpenAiCompatibleClient:
     """调用 OpenAI 兼容接口的最小客户端。"""
 
-    def __init__(self, base_url: str, api_key: str, model: str, timeout_seconds: int = 60) -> None:
+    def __init__(
+        self,
+        base_url: str,
+        api_key: str,
+        model: str,
+        timeout_seconds: int = 60,
+        max_attempts: int = 3,
+        retry_base_delay_seconds: float = 1.0,
+    ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.model = model
         self.timeout_seconds = timeout_seconds
+        self.max_attempts = max(1, int(max_attempts or 1))
+        self.retry_base_delay_seconds = max(0.0, float(retry_base_delay_seconds))
 
     def rank(self, prompt_payload: dict[str, str] | str) -> dict:
         """提交提示词并返回标准化结果。"""
@@ -47,6 +58,28 @@ class OpenAiCompatibleClient:
             self.timeout_seconds,
         )
 
+        result = {"status": "error", "reason": "unknown"}
+        for attempt in range(1, self.max_attempts + 1):
+            result = self._rank_once(url, messages)
+            if result.get("status") == "ok":
+                return result
+            if attempt >= self.max_attempts or not _is_retryable_reason(result.get("reason")):
+                return result
+
+            delay_seconds = self.retry_base_delay_seconds * attempt
+            logger.warning(
+                "LLM 请求失败，准备重试: model=%s, attempt=%s/%s, reason=%s, delay=%ss",
+                self.model,
+                attempt,
+                self.max_attempts,
+                result.get("reason", "unknown"),
+                delay_seconds,
+            )
+            time.sleep(delay_seconds)
+
+        return result
+
+    def _rank_once(self, url: str, messages: list[dict[str, str]]) -> dict:
         try:
             response = requests.post(
                 url,
@@ -112,3 +145,17 @@ class OpenAiCompatibleClient:
         reason = parsed_content.get("reason", "unknown")
         logger.warning("LLM 返回错误状态: model=%s, reason=%s", self.model, reason)
         return {"status": "error", "reason": reason}
+
+
+def _is_retryable_reason(reason: object) -> bool:
+    if not isinstance(reason, str):
+        return False
+    if reason.startswith("http_"):
+        return True
+    return reason in {
+        "timeout",
+        "request_error",
+        "invalid_response_json",
+        "missing_content",
+        "invalid_content_json",
+    }

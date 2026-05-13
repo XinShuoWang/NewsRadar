@@ -37,6 +37,7 @@ def test_openai_compatible_client_sends_system_and_user_messages(monkeypatch):
         base_url="https://llm.example.com/v1",
         api_key="secret",
         model="gpt-test",
+        max_attempts=1,
     )
 
     result = client.rank(
@@ -118,6 +119,7 @@ def test_openai_compatible_client_reports_timeout(monkeypatch):
         base_url="https://llm.example.com/v1",
         api_key="secret",
         model="gpt-test",
+        max_attempts=1,
     )
 
     assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "timeout"}
@@ -140,9 +142,48 @@ def test_openai_compatible_client_reports_http_error(monkeypatch):
         base_url="https://llm.example.com/v1",
         api_key="secret",
         model="gpt-test",
+        max_attempts=1,
     )
 
     assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "http_429"}
+
+
+def test_openai_compatible_client_retries_http_errors(monkeypatch):
+    attempts = []
+
+    class ErrorResponse:
+        status_code = 503
+
+        def raise_for_status(self):
+            raise requests.HTTPError("503 Server Error", response=self)
+
+    class SuccessResponse:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"choices": [{"message": {"content": {"status": "ok", "items": []}}}]}
+
+    def fake_post(url, headers, json, timeout):
+        attempts.append(url)
+        if len(attempts) < 3:
+            return ErrorResponse()
+        return SuccessResponse()
+
+    sleep_calls = []
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+    monkeypatch.setattr("newsradar.llm.client.time.sleep", sleep_calls.append)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "ok", "items": []}
+    assert len(attempts) == 3
+    assert sleep_calls == [1.0, 2.0]
 
 
 def test_openai_compatible_client_reports_invalid_content_json(monkeypatch):
@@ -162,6 +203,39 @@ def test_openai_compatible_client_reports_invalid_content_json(monkeypatch):
         base_url="https://llm.example.com/v1",
         api_key="secret",
         model="gpt-test",
+        max_attempts=1,
     )
 
     assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "invalid_content_json"}
+
+
+def test_openai_compatible_client_retries_invalid_content_json(monkeypatch):
+    attempts = []
+
+    class FakeResponse:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            attempts.append("json")
+            if len(attempts) < 3:
+                return {"choices": [{"message": {"content": "not json"}}]}
+            return {"choices": [{"message": {"content": {"status": "ok", "items": []}}}]}
+
+    def fake_post(url, headers, json, timeout):
+        return FakeResponse()
+
+    sleep_calls = []
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+    monkeypatch.setattr("newsradar.llm.client.time.sleep", sleep_calls.append)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "ok", "items": []}
+    assert len(attempts) == 3
+    assert sleep_calls == [1.0, 2.0]

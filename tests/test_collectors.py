@@ -5,8 +5,10 @@ from datetime import datetime, timezone
 from newsradar.collectors.feed import parse_feed_text
 from newsradar.collectors.html import parse_html_listing
 from newsradar.collectors.openalex import parse_openalex_text
+from newsradar.collectors.service import collect_raw_items
 from newsradar.collectors.registry import load_sources
 from newsradar.collectors.semanticscholar import parse_semantic_scholar_text
+from newsradar.models import SourceConfig
 
 
 def test_parse_feed_text_returns_raw_items():
@@ -194,6 +196,50 @@ sources:
     assert len(sources) == 1
     assert sources[0].name == "arxiv-db"
     assert sources[0].parser == "feed"
+
+
+def test_collect_raw_items_sleeps_between_requests_to_same_domain(monkeypatch):
+    sources = [
+        SourceConfig(
+            name="feed-one",
+            kind="paper",
+            parser="feed",
+            url="https://export.arxiv.org/api/query?search_query=cat%3Acs.DB",
+        ),
+        SourceConfig(
+            name="feed-two",
+            kind="paper",
+            parser="feed",
+            url="https://export.arxiv.org/api/query?search_query=cat%3Acs.DC",
+        ),
+        SourceConfig(
+            name="other-domain",
+            kind="paper",
+            parser="feed",
+            url="https://example.com/feed.xml",
+        ),
+    ]
+    events = []
+
+    def fake_fetch(url):
+        events.append(("fetch", url))
+        return Path("tests/fixtures/collector/feed_entry.xml").read_text(encoding="utf-8")
+
+    def fake_sleep(seconds):
+        events.append(("sleep", seconds))
+
+    monkeypatch.setattr("newsradar.collectors.service.time.sleep", fake_sleep)
+
+    items, errors = collect_raw_items(sources, fetcher=fake_fetch)
+
+    assert len(items) == 3
+    assert errors == []
+    assert events == [
+        ("fetch", sources[0].url),
+        ("sleep", 3.0),
+        ("fetch", sources[1].url),
+        ("fetch", sources[2].url),
+    ]
 
 
 def test_official_sources_use_arxiv_openalex_and_semantic_scholar_for_papers():
