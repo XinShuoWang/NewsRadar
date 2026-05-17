@@ -315,7 +315,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-05-16": [
+      "2026-05-17": [
         "url:https://duckdb.org/2026/03/20/duckdb-extensionkit-csharp.html",
         "url:https://duckdb.org/2026/03/23/announcing-duckdb-151.html",
         "url:https://duckdb.org/2026/04/01/duckdb-now-speaks-dutch.html",
@@ -338,7 +338,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-05-16": [
+      "2026-05-17": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:http://mediatum.ub.tum.de/node?id=1306494",
@@ -349,7 +349,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-05-16": [
+      "2026-05-17": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.5445/ir/1000055675",
         "url:https://doi.org/10.5075/epfl-thesis-7222",
@@ -357,7 +357,7 @@
       ]
     },
     "semantic-scholar-db-engine": {
-      "2026-05-16": [
+      "2026-05-17": [
         "url:https://doi.org/10.1109/SoutheastCon63549.2026.11476403",
         "url:https://doi.org/10.31893/multirev.2026451",
         "url:https://doi.org/10.1109/SoutheastCon63549.2026.11476579",
@@ -1546,22 +1546,7 @@
       ]
     },
     "semantic-scholar-systems-memory": {
-      "2026-05-16": [
-        "url:https://arxiv.org/abs/2605.02487",
-        "url:https://doi.org/10.1145/3814961",
-        "url:https://arxiv.org/abs/2605.02625",
-        "url:https://arxiv.org/abs/2605.02199",
-        "url:https://arxiv.org/abs/2605.02396",
-        "url:https://doi.org/10.1177/13872877261447431",
-        "url:https://arxiv.org/abs/2605.02189",
-        "url:https://arxiv.org/abs/2605.02162",
-        "url:https://doi.org/10.55041/ijcope.v2i5.054",
-        "url:https://doi.org/10.29235/1561-8323-2026-70-2-108-118",
-        "url:https://doi.org/10.1002/tee.70262",
-        "url:https://doi.org/10.55041/ijcope.v2i5.040",
-        "url:https://arxiv.org/abs/2605.02994",
-        "url:https://arxiv.org/abs/2605.05246",
-        "url:https://arxiv.org/abs/2605.03228",
+      "2026-05-17": [
         "url:https://arxiv.org/abs/2605.03216",
         "url:https://doi.org/10.1177/14644193261438931",
         "url:https://doi.org/10.32479/ijeep.23158",
@@ -2343,6 +2328,7 @@
         "url:https://doi.org/10.1088/2040-8986/ae6d0f",
         "url:https://doi.org/10.1088/1402-4896/ae6d42",
         "url:https://doi.org/10.1007/s42979-026-04947-0",
+        "url:https://doi.org/10.64898/2026.05.11.724194",
         "url:https://doi.org/10.64336/001c.162155",
         "url:https://doi.org/10.26650/acin.1837655",
         "url:https://doi.org/10.55041/ijcope.v2i5.380",
@@ -2368,6 +2354,7 @@
         "url:https://doi.org/10.17645/up.11551",
         "url:https://doi.org/10.1088/1361-6501/ae6d1d",
         "url:https://doi.org/10.1007/jhep05(2026)139",
+        "url:https://doi.org/10.46656/access.2026.7.2(10)",
         "url:https://doi.org/10.3389/fpubh.2026.1731904",
         "url:https://doi.org/10.1093/hr/uhag200",
         "url:https://doi.org/10.1007/s11334-026-00636-6",
@@ -2379,7 +2366,9 @@
         "url:https://doi.org/10.1080/17442222.2026.2670919",
         "url:https://doi.org/10.1111/jnp.70053",
         "url:https://doi.org/10.1038/s41598-026-52541-4",
+        "url:https://doi.org/10.64898/2026.05.08.723863",
         "url:https://doi.org/10.59875/1017sjss13051",
+        "url:https://doi.org/10.64898/2026.05.11.724183",
         "url:https://doi.org/10.3390/electronics15102072",
         "url:https://doi.org/10.3390/w18101173",
         "url:https://doi.org/10.1177/03043754261449646",
@@ -2395,6 +2384,8 @@
         "url:https://doi.org/10.1371/journal.pntd.0014337",
         "url:https://doi.org/10.47392/irjaeh.2026.0476",
         "url:https://doi.org/10.55324/josr.v5i6.3166",
+        "url:https://doi.org/10.1177/09544070261446454",
+        "url:https://doi.org/10.64898/2026.05.11.724385",
         "url:https://doi.org/10.1108/ijshe-11-2025-1391",
         "url:https://doi.org/10.2514/6.2026-3088",
         "url:https://doi.org/10.64898/2026.05.10.724142",
@@ -2406,11 +2397,17 @@
         "url:https://doi.org/10.59256/indjcst.20260502026",
         "url:https://doi.org/10.31449/inf.v50i12.9440",
         "url:https://doi.org/10.1002/pro.70594",
+        "url:https://doi.org/10.1079/20260235916",
         "url:https://doi.org/10.1093/mnras/stag906",
         "url:https://doi.org/10.1093/gji/ggag186",
+        "url:https://doi.org/10.1007/s42452-026-08695-x",
         "url:https://doi.org/10.1093/intimm/dxag024",
         "url:https://doi.org/10.1093/heapol/czag066",
         "url:https://doi.org/10.1108/jices-12-2025-0375",
+        "url:https://doi.org/10.69849/mj28ac38",
+        "url:https://doi.org/10.1088/1361-6501/ae6dea",
+        "url:https://doi.org/10.3390/electronics15102104",
+        "url:https://doi.org/10.1088/1674-1056/ae6d97",
         "url:https://doi.org/10.64898/2026.05.12.26353001",
         "url:https://doi.org/10.1109/JIOT.2026.3666736",
         "url:https://doi.org/10.1109/JSEN.2025.3621577",
@@ -2537,16 +2534,36 @@
         "url:https://doi.org/10.5662/wjm.v16.i2.114072",
         "url:https://doi.org/10.30892/auog.36103-939",
         "url:https://doi.org/10.5604/01.3001.0055.7332",
+        "url:https://doi.org/10.1109/TPDS.2026.3686206",
+        "url:https://doi.org/10.1109/TPDS.2026.3679987",
         "url:https://doi.org/10.57262/ade031-0708-513",
         "url:https://doi.org/10.1109/TPEL.2026.3660047",
         "url:https://doi.org/10.1016/j.microrel.2026.116155",
         "url:https://doi.org/10.1016/j.jddst.2026.108293",
+        "url:https://doi.org/10.1109/TPDS.2026.3678282",
         "url:https://doi.org/10.1109/LPT.2025.3614902",
         "url:https://doi.org/10.1109/LPT.2025.3642297",
         "url:https://doi.org/10.1109/TPEL.2026.3656880",
         "url:https://doi.org/10.29333/ejosdr/18318",
         "url:https://doi.org/10.1016/j.chaos.2026.118479",
         "url:https://doi.org/10.1109/TASC.2026.3679652"
+      ],
+      "2026-05-16": [
+        "url:https://arxiv.org/abs/2605.02487",
+        "url:https://doi.org/10.1145/3814961",
+        "url:https://arxiv.org/abs/2605.02625",
+        "url:https://arxiv.org/abs/2605.02199",
+        "url:https://arxiv.org/abs/2605.02396",
+        "url:https://doi.org/10.1177/13872877261447431",
+        "url:https://arxiv.org/abs/2605.02189",
+        "url:https://arxiv.org/abs/2605.02162",
+        "url:https://doi.org/10.55041/ijcope.v2i5.054",
+        "url:https://doi.org/10.29235/1561-8323-2026-70-2-108-118",
+        "url:https://doi.org/10.1002/tee.70262",
+        "url:https://doi.org/10.55041/ijcope.v2i5.040",
+        "url:https://arxiv.org/abs/2605.02994",
+        "url:https://arxiv.org/abs/2605.05246",
+        "url:https://arxiv.org/abs/2605.03228"
       ],
       "2026-05-15": [
         "url:https://arxiv.org/abs/2605.01342",
