@@ -1,15 +1,7 @@
 {
   "seen_items": {
     "arxiv-db-recent": {
-      "2026-05-24": [
-        "url:https://arxiv.org/abs/2605.11953v1",
-        "url:https://arxiv.org/abs/2605.12204v2",
-        "url:https://arxiv.org/abs/2605.12272v1",
-        "url:https://arxiv.org/abs/2605.12319v1",
-        "url:https://arxiv.org/abs/2605.12349v1",
-        "url:https://arxiv.org/abs/2605.12453v1",
-        "url:https://arxiv.org/abs/2605.12586v1",
-        "url:https://arxiv.org/abs/2605.13173v1",
+      "2026-05-25": [
         "url:https://arxiv.org/abs/2605.13310v1",
         "url:https://arxiv.org/abs/2605.13367v1",
         "url:https://arxiv.org/abs/2605.13398v1",
@@ -26,10 +18,11 @@
         "url:https://arxiv.org/abs/2605.16250v1",
         "url:https://arxiv.org/abs/2605.16567v1",
         "url:https://arxiv.org/abs/2605.16948v1",
-        "url:https://arxiv.org/abs/2605.17415v1",
+        "url:https://arxiv.org/abs/2605.17415v2",
         "url:https://arxiv.org/abs/2605.17524v1",
         "url:https://arxiv.org/abs/2605.17657v2",
         "url:https://arxiv.org/abs/2605.17831v1",
+        "url:https://arxiv.org/abs/2605.22852v1",
         "url:https://arxiv.org/abs/2605.17992v1",
         "url:https://arxiv.org/abs/2605.18015v1",
         "url:https://arxiv.org/abs/2605.19197v1",
@@ -51,7 +44,25 @@
         "url:https://arxiv.org/abs/2605.21797v1",
         "url:https://arxiv.org/abs/2605.21952v1",
         "url:https://arxiv.org/abs/2605.22304v1",
-        "url:https://arxiv.org/abs/2605.22811v1"
+        "url:https://arxiv.org/abs/2605.22811v1",
+        "url:https://arxiv.org/abs/2605.22952v1",
+        "url:https://arxiv.org/abs/2605.22992v1",
+        "url:https://arxiv.org/abs/2605.23103v1",
+        "url:https://arxiv.org/abs/2605.23105v1",
+        "url:https://arxiv.org/abs/2605.23280v1",
+        "url:https://arxiv.org/abs/2605.23815v1",
+        "url:https://arxiv.org/abs/2605.23887v1"
+      ],
+      "2026-05-24": [
+        "url:https://arxiv.org/abs/2605.11953v1",
+        "url:https://arxiv.org/abs/2605.12204v2",
+        "url:https://arxiv.org/abs/2605.12272v1",
+        "url:https://arxiv.org/abs/2605.12319v1",
+        "url:https://arxiv.org/abs/2605.12349v1",
+        "url:https://arxiv.org/abs/2605.12453v1",
+        "url:https://arxiv.org/abs/2605.12586v1",
+        "url:https://arxiv.org/abs/2605.13173v1",
+        "url:https://arxiv.org/abs/2605.17415v1"
       ],
       "2026-05-21": [
         "url:https://arxiv.org/abs/2605.10373v1",
@@ -157,10 +168,7 @@
       ]
     },
     "arxiv-db-systems-memory": {
-      "2026-05-24": [
-        "url:https://arxiv.org/abs/2605.12110v1",
-        "url:https://arxiv.org/abs/2605.12204v2",
-        "url:https://arxiv.org/abs/2605.12683v1",
+      "2026-05-25": [
         "url:https://arxiv.org/abs/2605.13209v1",
         "url:https://arxiv.org/abs/2605.13362v2",
         "url:https://arxiv.org/abs/2605.13489v1",
@@ -180,6 +188,7 @@
         "url:https://arxiv.org/abs/2605.16565v2",
         "url:https://arxiv.org/abs/2605.16637v1",
         "url:https://arxiv.org/abs/2605.16867v1",
+        "url:https://arxiv.org/abs/2605.17415v2",
         "url:https://arxiv.org/abs/2605.17944v1",
         "url:https://arxiv.org/abs/2605.17992v1",
         "url:https://arxiv.org/abs/2605.18086v1",
@@ -207,7 +216,14 @@
         "url:https://arxiv.org/abs/2605.22014v1",
         "url:https://arxiv.org/abs/2605.22416v1",
         "url:https://arxiv.org/abs/2605.22426v1",
-        "url:https://arxiv.org/abs/2605.22778v1"
+        "url:https://arxiv.org/abs/2605.22778v1",
+        "url:https://arxiv.org/abs/2605.23297v1",
+        "url:https://arxiv.org/abs/2605.23764v1"
+      ],
+      "2026-05-24": [
+        "url:https://arxiv.org/abs/2605.12110v1",
+        "url:https://arxiv.org/abs/2605.12204v2",
+        "url:https://arxiv.org/abs/2605.12683v1"
       ],
       "2026-05-21": [
         "url:https://arxiv.org/abs/2605.10501v1",
@@ -312,8 +328,7 @@
       ]
     },
     "arxiv-dc-execution-memory": {
-      "2026-05-24": [
-        "url:https://arxiv.org/abs/2604.25422v2",
+      "2026-05-25": [
         "url:https://arxiv.org/abs/2604.25899v2",
         "url:https://arxiv.org/abs/2604.26039v1",
         "url:https://arxiv.org/abs/2604.26294v1",
@@ -362,7 +377,11 @@
         "url:https://arxiv.org/abs/2605.21312v1",
         "url:https://arxiv.org/abs/2605.21427v1",
         "url:https://arxiv.org/abs/2605.21603v1",
-        "url:https://arxiv.org/abs/2605.22014v1"
+        "url:https://arxiv.org/abs/2605.22014v1",
+        "url:https://arxiv.org/abs/2605.23764v1"
+      ],
+      "2026-05-24": [
+        "url:https://arxiv.org/abs/2604.25422v2"
       ],
       "2026-05-21": [
         "url:https://arxiv.org/abs/2604.24340v1",
@@ -419,7 +438,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-05-24": [
+      "2026-05-25": [
         "url:https://duckdb.org/2026/04/01/duckdb-now-speaks-dutch.html",
         "url:https://duckdb.org/2026/04/02/data-inlining-in-ducklake.html",
         "url:https://duckdb.org/2026/04/13/ducklake-10.html",
@@ -448,7 +467,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-05-24": [
+      "2026-05-25": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:http://mediatum.ub.tum.de/node?id=1306494",
@@ -459,7 +478,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-05-24": [
+      "2026-05-25": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.5445/ir/1000055675",
         "url:https://doi.org/10.5075/epfl-thesis-7222",
@@ -467,12 +486,7 @@
       ]
     },
     "semantic-scholar-db-engine": {
-      "2026-05-24": [
-        "url:https://doi.org/10.1371/journal.pntd.0014127",
-        "url:https://doi.org/10.1177/14703203261437332",
-        "url:https://doi.org/10.53106/240996512026031301005",
-        "url:https://doi.org/10.1093/bib/bbag119",
-        "url:https://doi.org/10.1136/bmjopen-2025-101098",
+      "2026-05-25": [
         "url:https://doi.org/10.2147/CEOR.S581258",
         "url:https://doi.org/10.3168/jds.2025-27601",
         "url:https://doi.org/10.1016/j.prosdent.2026.02.025",
@@ -946,6 +960,7 @@
         "url:https://doi.org/10.1017/s0954422426100407",
         "url:https://doi.org/10.2174/0123520965428324260102180410",
         "url:https://doi.org/10.1109/SysCon66367.2026.11503625",
+        "url:https://doi.org/10.1186/s12889-026-27239-x",
         "url:https://doi.org/10.1109/ICAIII69475.2026.11521612",
         "url:https://doi.org/10.1145/3788852.3805595",
         "url:https://doi.org/10.1097/prs.0000000000013103",
@@ -995,7 +1010,7 @@
         "url:https://doi.org/10.64898/2026.04.06.716827",
         "url:https://doi.org/10.2174/0126671212458455260408061140",
         "url:https://doi.org/10.38124/ijisrt/26mar1798",
-        "url:https://doi.org/10.25259/cytojournal_80_2025",
+        "url:https://doi.org/10.25259/Cytojournal_80_2025",
         "url:https://doi.org/10.12692/ijb/28.4.51-58",
         "url:https://arxiv.org/abs/2604.08021",
         "url:https://doi.org/10.55041/ijsrem59675",
@@ -1056,6 +1071,7 @@
         "url:https://doi.org/10.63053/ijmea.77",
         "url:https://doi.org/10.3389/fcimb.2026.1775398",
         "url:https://doi.org/10.32996/jefas.2026.8.5.1",
+        "url:https://doi.org/10.1186/s12883-026-04877-7",
         "url:https://doi.org/10.20396/saberes.v5i00.20370",
         "url:https://doi.org/10.64898/2026.04.12.718028",
         "url:https://doi.org/10.1109/RMKMATE69073.2026.11518988",
@@ -1174,6 +1190,7 @@
         "url:https://doi.org/10.55041/ijcope.v2i4.580",
         "url:https://doi.org/10.1108/ec-07-2025-0843",
         "url:https://doi.org/10.1088/1361-6501/ae6474",
+        "url:https://doi.org/10.21037/tcr-2025-1-2790",
         "url:https://doi.org/10.55041/ijsrem61109",
         "url:https://arxiv.org/abs/2604.23392",
         "url:https://arxiv.org/abs/2604.23100",
@@ -1189,6 +1206,7 @@
         "url:https://arxiv.org/abs/2604.24552",
         "url:https://doi.org/10.47709/brilliance.v6i1.8316",
         "url:https://doi.org/10.55606/jupsim.v5i2.6992",
+        "url:https://doi.org/10.21037/jtd-2025-1-2557",
         "url:https://doi.org/10.1002/tee.70313",
         "url:https://arxiv.org/abs/2604.24469",
         "url:https://doi.org/10.55041/ijsrem61566",
@@ -1269,6 +1287,8 @@
         "url:https://doi.org/10.55041/ijcope.v2i4.937",
         "url:https://doi.org/10.1111/tgis.70273",
         "url:https://doi.org/10.2147/COPD.S577042",
+        "url:https://doi.org/10.2147/CIA.S604454",
+        "url:https://doi.org/10.1371/journal.pntd.0014344",
         "url:https://doi.org/10.1093/ajrccm/aamag162.4989",
         "url:https://doi.org/10.1088/1742-6596/3230/1/012016",
         "url:https://doi.org/10.1109/CSPA68262.2026.11517686",
@@ -1455,7 +1475,6 @@
         "url:https://doi.org/10.2196/90295",
         "url:https://doi.org/10.1007/s10143-026-04329-3",
         "url:https://doi.org/10.24425/jwld.2026.158702",
-        "url:https://doi.org/10.1371/journal.pntd.0014344",
         "url:https://doi.org/10.1145/3816732",
         "url:https://doi.org/10.1111/hae.70313",
         "url:https://doi.org/10.1093/tse/tdag025",
@@ -1468,6 +1487,14 @@
         "url:https://doi.org/10.22214/ijraset.2026.81855",
         "url:https://doi.org/10.22214/ijraset.2026.82094",
         "url:https://doi.org/10.23939/csn2026.01.152"
+      ],
+      "2026-05-24": [
+        "url:https://doi.org/10.1371/journal.pntd.0014127",
+        "url:https://doi.org/10.1177/14703203261437332",
+        "url:https://doi.org/10.53106/240996512026031301005",
+        "url:https://doi.org/10.1093/bib/bbag119",
+        "url:https://doi.org/10.1136/bmjopen-2025-101098",
+        "url:https://doi.org/10.25259/cytojournal_80_2025"
       ],
       "2026-05-23": [
         "url:https://doi.org/10.1002/cpe.70638",
@@ -1807,14 +1834,7 @@
       ]
     },
     "semantic-scholar-systems-memory": {
-      "2026-05-24": [
-        "url:https://doi.org/10.3389/fddev.2026.1735474",
-        "url:https://doi.org/10.55041/ijcope.v2i5.369",
-        "url:https://doi.org/10.3389/fnint.2026.1772467",
-        "url:https://doi.org/10.3389/fnetp.2026.1779111",
-        "url:https://arxiv.org/abs/2605.11421",
-        "url:https://doi.org/10.3390/coatings16050590",
-        "url:https://doi.org/10.55041/isjem07200",
+      "2026-05-25": [
         "url:https://doi.org/10.54097/k79vxk50",
         "url:https://arxiv.org/abs/2605.11523",
         "url:https://doi.org/10.32702/2306-6814.2026.9.198",
@@ -2540,6 +2560,7 @@
         "url:https://doi.org/10.3389/fpubh.2026.1809584",
         "url:https://doi.org/10.3390/s26103226",
         "url:https://doi.org/10.1002/nag.70345",
+        "url:https://doi.org/10.1038/s41378-026-01292-3",
         "url:https://doi.org/10.3389/fmed.2026.1801693",
         "url:https://doi.org/10.3389/fcimb.2026.1846723",
         "url:https://doi.org/10.1002/adma.202520288",
@@ -2594,7 +2615,6 @@
         "url:https://doi.org/10.3390/membranes16050181",
         "url:https://doi.org/10.24425/jwld.2026.158702",
         "url:https://doi.org/10.3390/electronics15102210",
-        "url:https://doi.org/10.1371/journal.pntd.0014344",
         "url:https://doi.org/10.3389/fneur.2026.1839841",
         "url:https://doi.org/10.1108/jd-10-2025-0304",
         "url:https://doi.org/10.3389/fsufs.2026.1827152",
@@ -2603,6 +2623,7 @@
         "url:https://doi.org/10.55041/ijcope.v2i5.644",
         "url:https://doi.org/10.3389/frvir.2026.1743415",
         "url:https://doi.org/10.46647/rdems0205067",
+        "url:https://doi.org/10.1111/jen.70123",
         "url:https://doi.org/10.3390/vaccines14050462",
         "url:https://doi.org/10.38124/ijisrt/26may402",
         "url:https://doi.org/10.1145/3816435",
@@ -2632,15 +2653,21 @@
         "url:https://doi.org/10.64898/2026.05.18.26353478",
         "url:https://doi.org/10.1186/s13195-026-02079-4",
         "url:https://doi.org/10.1088/1361-6501/ae7142",
+        "url:https://doi.org/10.1038/s41598-026-52533-4",
+        "url:https://doi.org/10.1145/3816754",
+        "url:https://doi.org/10.36948/ijfmr.2026.v08i03.79043",
+        "url:https://doi.org/10.3390/ijms27114686",
         "url:https://doi.org/10.1108/sup-10-2025-0054",
         "url:https://doi.org/10.1108/cafr-08-2025-0189",
         "url:https://doi.org/10.47481/jten.0011",
+        "url:https://doi.org/10.1371/journal.pone.0350010",
         "url:https://doi.org/10.64898/2026.05.21.26352626",
         "url:https://doi.org/10.1108/sasbe-11-2025-0744",
         "url:https://doi.org/10.47475/1994-2796-2026-510-4-52-62",
         "url:https://doi.org/10.5753/sbsi.2026.248585",
         "url:https://doi.org/10.5753/sbsi.2026.248708",
         "url:https://doi.org/10.5753/sbsi.2026.248573",
+        "url:https://doi.org/10.1108/pmm-12-2024-0069",
         "url:https://doi.org/10.5753/sbsi.2026.248343",
         "url:https://doi.org/10.5753/sbsi.2026.248323",
         "url:https://doi.org/10.18860/cauchy.v11i1.40964",
@@ -2808,6 +2835,16 @@
         "url:https://doi.org/10.1016/j.chaos.2026.118479",
         "url:https://doi.org/10.1109/TASC.2026.3679652",
         "url:https://doi.org/10.1016/j.physa.2026.131667"
+      ],
+      "2026-05-24": [
+        "url:https://doi.org/10.3389/fddev.2026.1735474",
+        "url:https://doi.org/10.55041/ijcope.v2i5.369",
+        "url:https://doi.org/10.3389/fnint.2026.1772467",
+        "url:https://doi.org/10.3389/fnetp.2026.1779111",
+        "url:https://arxiv.org/abs/2605.11421",
+        "url:https://doi.org/10.3390/coatings16050590",
+        "url:https://doi.org/10.55041/isjem07200",
+        "url:https://doi.org/10.1371/journal.pntd.0014344"
       ],
       "2026-05-23": [
         "url:https://arxiv.org/abs/2605.10921",
