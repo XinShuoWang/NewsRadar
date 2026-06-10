@@ -50,7 +50,7 @@ def test_openai_compatible_client_sends_system_and_user_messages(monkeypatch):
     assert result == {"status": "ok", "items": []}
     assert captured["url"] == "https://llm.example.com/v1/chat/completions"
     assert captured["headers"] == {"Authorization": "Bearer secret"}
-    assert captured["timeout"] == 60
+    assert captured["timeout"] == 600
     assert captured["json"]["model"] == "gpt-test"
     assert captured["json"]["response_format"] == {"type": "json_object"}
     assert captured["json"]["messages"] == [
@@ -105,7 +105,7 @@ def test_openai_compatible_client_supports_gemini_openai_compatible_endpoint(mon
     assert result == {"status": "ok", "items": []}
     assert captured["url"] == "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
     assert captured["headers"] == {"Authorization": "Bearer gemini-secret"}
-    assert captured["timeout"] == 60
+    assert captured["timeout"] == 600
     assert captured["json"]["model"] == "gemini-3-flash-preview"
 
 
@@ -183,7 +183,36 @@ def test_openai_compatible_client_retries_http_errors(monkeypatch):
 
     assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "ok", "items": []}
     assert len(attempts) == 3
-    assert sleep_calls == [1.0, 2.0]
+    assert sleep_calls == [300.0, 300.0]
+
+
+def test_openai_compatible_client_uses_five_attempts_by_default(monkeypatch):
+    attempts = []
+
+    class ErrorResponse:
+        status_code = 503
+
+        def raise_for_status(self):
+            raise requests.HTTPError("503 Server Error", response=self)
+
+    def fake_post(url, headers, json, timeout):
+        attempts.append(url)
+        return ErrorResponse()
+
+    sleep_calls = []
+
+    monkeypatch.setattr("newsradar.llm.client.requests.post", fake_post)
+    monkeypatch.setattr("newsradar.llm.client.time.sleep", sleep_calls.append)
+
+    client = OpenAiCompatibleClient(
+        base_url="https://llm.example.com/v1",
+        api_key="secret",
+        model="gpt-test",
+    )
+
+    assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "error", "reason": "http_503"}
+    assert len(attempts) == 5
+    assert sleep_calls == [300.0, 300.0, 300.0, 300.0]
 
 
 def test_openai_compatible_client_reports_invalid_content_json(monkeypatch):
@@ -238,4 +267,4 @@ def test_openai_compatible_client_retries_invalid_content_json(monkeypatch):
 
     assert client.rank({"user_prompt": "请输出 JSON"}) == {"status": "ok", "items": []}
     assert len(attempts) == 3
-    assert sleep_calls == [1.0, 2.0]
+    assert sleep_calls == [300.0, 300.0]

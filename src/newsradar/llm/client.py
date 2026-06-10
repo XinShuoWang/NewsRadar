@@ -19,9 +19,9 @@ class OpenAiCompatibleClient:
         base_url: str,
         api_key: str,
         model: str,
-        timeout_seconds: int = 60,
-        max_attempts: int = 3,
-        retry_base_delay_seconds: float = 1.0,
+        timeout_seconds: int = 600,
+        max_attempts: int = 5,
+        retry_base_delay_seconds: float = 300.0,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
@@ -66,7 +66,7 @@ class OpenAiCompatibleClient:
             if attempt >= self.max_attempts or not _is_retryable_reason(result.get("reason")):
                 return result
 
-            delay_seconds = self.retry_base_delay_seconds * attempt
+            delay_seconds = self.retry_base_delay_seconds
             logger.warning(
                 "LLM 请求失败，准备重试: model=%s, attempt=%s/%s, reason=%s, delay=%ss",
                 self.model,
