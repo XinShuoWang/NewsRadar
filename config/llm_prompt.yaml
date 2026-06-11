@@ -12,6 +12,6 @@ user_prompt_template: |
   3. is_duplicate 表示它是否与本批次其他条目重复。
   4. summary_zh 和 why_it_matters_zh 必须使用简洁中文。
   5. tags 应该是简短英文标签，例如 memory、execution、runtime、spill。
-  6. 请返回格式：{"status":"ok","items":[{"url":"","score":0.0,"tags":[],"summary_zh":"","why_it_matters_zh":"","is_relevant":true,"is_duplicate":false}]}
+  6. 请返回格式：{"status":"ok","items":[{"url":"https://example.com/item","score":0.0,"tags":[],"summary_zh":"用一句中文概括条目内容。","why_it_matters_zh":"用一句中文说明它为什么值得关注。","is_relevant":true,"is_duplicate":false}]}
   候选条目如下：
   {items_json}

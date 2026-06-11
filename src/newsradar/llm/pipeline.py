@@ -71,7 +71,7 @@ def run_llm_pipeline(
 
         selected_count = 0
         for item in normalized_response["items"]:
-            validation_error = _validate_ranked_item(item)
+            validation_error = _validate_ranked_item_structure(item)
             if validation_error is not None:
                 logger.warning(
                     "LLM 批次结果校验失败: batch=%s/%s, reason=%s",
@@ -82,6 +82,15 @@ def run_llm_pipeline(
                 return LlmPipelineResult(status="unavailable", error_reason=validation_error)
 
             if item["is_relevant"] and not item["is_duplicate"]:
+                selected_validation_error = _validate_selected_ranked_item(item)
+                if selected_validation_error is not None:
+                    logger.warning(
+                        "LLM 已选条目跳过: batch=%s/%s, reason=%s",
+                        batch_index,
+                        len(batches),
+                        selected_validation_error,
+                    )
+                    continue
                 selected_count += 1
                 ranked_items.append(
                     RankedItem(
@@ -171,16 +180,11 @@ def _normalize_response(response: Any) -> dict[str, Any]:
     return {"status": "ok", "items": items}
 
 
-def _validate_ranked_item(item: Any) -> str | None:
-    """校验单个条目结构，返回错误原因或 None。"""
+def _validate_ranked_item_structure(item: Any) -> str | None:
+    """校验单个条目的通用结构，返回错误原因或 None。"""
 
     if not isinstance(item, dict):
         return "invalid_item_type"
-
-    required_str_fields = ("url", "summary_zh", "why_it_matters_zh")
-    for field_name in required_str_fields:
-        if not isinstance(item.get(field_name), str) or not item[field_name]:
-            return f"invalid_item_{field_name}"
 
     if not isinstance(item.get("score"), (int, float)):
         return "invalid_item_score"
@@ -194,6 +198,17 @@ def _validate_ranked_item(item: Any) -> str | None:
 
     if not isinstance(item.get("is_duplicate"), bool):
         return "invalid_item_is_duplicate"
+
+    return None
+
+
+def _validate_selected_ranked_item(item: dict[str, Any]) -> str | None:
+    """校验进入日报展示的条目字段，返回错误原因或 None。"""
+
+    required_str_fields = ("url", "summary_zh", "why_it_matters_zh")
+    for field_name in required_str_fields:
+        if not isinstance(item.get(field_name), str) or not item[field_name].strip():
+            return f"invalid_item_{field_name}"
 
     return None
 

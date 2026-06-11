@@ -148,6 +148,38 @@ def test_run_llm_pipeline_marks_unavailable_on_malformed_success_payload():
     assert result.status == "unavailable"
 
 
+def test_run_llm_pipeline_skips_selected_items_missing_summary_fields():
+    result = run_llm_pipeline(
+        items=[],
+        llm_client=lambda payload: {
+            "status": "ok",
+            "items": [
+                {
+                    "url": "https://example.com/invalid",
+                    "score": 0.95,
+                    "tags": ["memory"],
+                    "summary_zh": "",
+                    "why_it_matters_zh": "原因。",
+                    "is_relevant": True,
+                    "is_duplicate": False,
+                },
+                {
+                    "url": "https://example.com/valid",
+                    "score": 0.9,
+                    "tags": ["execution"],
+                    "summary_zh": "讨论查询执行。",
+                    "why_it_matters_zh": "适合关注执行引擎的工程师。",
+                    "is_relevant": True,
+                    "is_duplicate": False,
+                },
+            ],
+        },
+    )
+
+    assert result.status == "ok"
+    assert [item.url for item in result.items] == ["https://example.com/valid"]
+
+
 def test_run_llm_pipeline_supports_rank_method_client():
     class RankClient:
         def __init__(self):
