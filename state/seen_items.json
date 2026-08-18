@@ -598,8 +598,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-08-17": [
-        "url:https://duckdb.org/2026/05/08/announcing-duckcon7.html",
+      "2026-08-18": [
         "url:https://duckdb.org/2026/05/12/quack-remote-protocol.html",
         "url:https://duckdb.org/2026/05/20/announcing-duckdb-153.html",
         "url:https://duckdb.org/2026/05/21/test-driving-lance.html",
@@ -608,7 +607,11 @@
         "url:https://duckdb.org/2026/06/17/announcing-duckdb-145.html",
         "url:https://duckdb.org/2026/07/22/announcing-duckdb-155.html",
         "url:https://duckdb.org/2026/07/31/asynchronous-io.html",
-        "url:https://duckdb.org/2026/08/05/github-40k-stars.html"
+        "url:https://duckdb.org/2026/08/05/github-40k-stars.html",
+        "url:https://duckdb.org/2026/08/17/duckdb-20-highlights.html"
+      ],
+      "2026-08-17": [
+        "url:https://duckdb.org/2026/05/08/announcing-duckcon7.html"
       ],
       "2026-08-05": [
         "url:https://duckdb.org/2026/05/07/delta-uc-updates.html"
@@ -621,7 +624,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-08-17": [
+      "2026-08-18": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:https://doi.org/10.1186/s40537-021-00555-2",
@@ -629,7 +632,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-08-17": [
+      "2026-08-18": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1702.01596",
         "url:https://doi.org/10.14778/3742728.3742762"
@@ -2264,51 +2267,6 @@
         "url:https://doi.org/10.58922/transportes.v34.e3209",
         "url:https://doi.org/10.9734/ajee/2026/v25i6943",
         "url:https://doi.org/10.1109/AIIoT68874.2026.11569528"
-      ],
-      "2026-07-18": [
-        "url:https://doi.org/10.1145/3802125",
-        "url:https://doi.org/10.2118/232448-ms",
-        "url:https://doi.org/10.2118/232533-ms",
-        "url:https://doi.org/10.1038/s41598-026-49565-1",
-        "url:https://doi.org/10.37482/2687-1491-z286",
-        "url:https://arxiv.org/abs/2605.18925",
-        "url:https://doi.org/10.1109/SP63933.2026.00008",
-        "url:https://doi.org/10.1145/3802112",
-        "url:https://doi.org/10.1145/3802036",
-        "url:https://doi.org/10.1109/SP63933.2026.00108",
-        "url:https://doi.org/10.1145/3802050",
-        "url:https://doi.org/10.2118/232493-ms",
-        "url:https://doi.org/10.1109/INFOCOM59046.2026.11571721",
-        "url:https://doi.org/10.1109/SP63933.2026.00221",
-        "url:https://doi.org/10.1109/ICIEAM69213.2026.11549575",
-        "url:https://doi.org/10.55041/ijcope.v2i5.545",
-        "url:https://doi.org/10.1145/3802029",
-        "url:https://doi.org/10.48550/arXiv.2605.18959",
-        "url:https://doi.org/10.1109/SP63933.2026.00173",
-        "url:https://doi.org/10.1145/3802073",
-        "url:https://doi.org/10.55041/isjem07492",
-        "url:https://doi.org/10.1186/s12859-026-06459-3",
-        "url:https://doi.org/10.1145/3812734.3813710",
-        "url:https://doi.org/10.1145/3812734.3813407",
-        "url:https://doi.org/10.1145/3802039",
-        "url:https://doi.org/10.1145/3802070",
-        "url:https://doi.org/10.2118/232438-ms",
-        "url:https://doi.org/10.1037/tra0002185",
-        "url:https://doi.org/10.1111/ans.70732",
-        "url:https://doi.org/10.64898/2026.05.14.26353197",
-        "url:https://doi.org/10.1007/s41062-026-02677-z",
-        "url:https://doi.org/10.54116/jbdai.v4i1.80",
-        "url:https://doi.org/10.53623/erph.v2i1.835",
-        "url:https://doi.org/10.11591/ijict.v15i2.pp729-740",
-        "url:https://doi.org/10.65521/ijacte.v15i1.2931",
-        "url:https://doi.org/10.1080/03007995.2026.2665022",
-        "url:https://doi.org/10.1111/hae.70313",
-        "url:https://doi.org/10.1080/1062936x.2026.2676682",
-        "url:https://doi.org/10.1002/hsr2.72689",
-        "url:https://doi.org/10.1002/hsr2.72613",
-        "url:https://doi.org/10.1002/mp.70467",
-        "url:https://doi.org/10.1111/jog.70365",
-        "url:https://doi.org/10.4028/p-uyz1nd"
       ]
     },
     "semantic-scholar-systems-memory": {
@@ -7297,81 +7255,6 @@
         "url:https://doi.org/10.1016/j.ymthe.2026.07.032",
         "url:https://arxiv.org/abs/2607.14175",
         "url:https://doi.org/10.1016/j.meegid.2026.105992"
-      ],
-      "2026-07-18": [
-        "url:https://doi.org/10.1093/noajnl/vdag176",
-        "url:https://doi.org/10.14445/23488549/ijece-v13i6p113",
-        "url:https://doi.org/10.3390/s26144350",
-        "url:https://doi.org/10.3390/automation7040106",
-        "url:https://doi.org/10.1038/s41598-026-60165-x",
-        "url:https://doi.org/10.1007/s11786-026-00629-5",
-        "url:https://arxiv.org/abs/2607.08432",
-        "url:https://doi.org/10.1159/000553416",
-        "url:https://arxiv.org/abs/2607.08391",
-        "url:https://doi.org/10.36948/ijfmr.2026.v08i04.83326",
-        "url:https://arxiv.org/abs/2607.08365",
-        "url:https://doi.org/10.1016/j.coviro.2026.101565",
-        "url:https://arxiv.org/abs/2607.08048",
-        "url:https://doi.org/10.48175/ijarsct-37631",
-        "url:https://doi.org/10.1007/s12346-026-01550-9",
-        "url:https://doi.org/10.3390/electronics15143006",
-        "url:https://doi.org/10.1021/acssensors.5c04572",
-        "url:https://doi.org/10.1098/rstb.2025.0248",
-        "url:https://doi.org/10.1098/rstb.2025.0243",
-        "url:https://doi.org/10.1177/15491684261460820",
-        "url:https://doi.org/10.3390/philosophies11040116",
-        "url:https://doi.org/10.1037/pag0000993",
-        "url:https://arxiv.org/abs/2607.08252",
-        "url:https://doi.org/10.3389/frvir.2026.1817800",
-        "url:https://doi.org/10.1007/s41060-026-01202-w",
-        "url:https://arxiv.org/abs/2607.08577",
-        "url:https://doi.org/10.1038/s41598-026-60710-8",
-        "url:https://doi.org/10.3390/ma19142954",
-        "url:https://doi.org/10.1109/tnnls.2026.3705873",
-        "url:https://doi.org/10.1007/s13226-026-00995-7",
-        "url:https://doi.org/10.9734/jabb/2026/v29i74132",
-        "url:https://doi.org/10.64898/2026.02.09.704807",
-        "url:https://arxiv.org/abs/2607.08541",
-        "url:https://doi.org/10.1007/s11307-026-02116-6",
-        "url:https://doi.org/10.1098/rstb.2025.0242",
-        "url:https://doi.org/10.36948/ijfmr.2026.v08i04.83379",
-        "url:https://doi.org/10.55041/isjem08169",
-        "url:https://doi.org/10.1038/s41598-026-60354-8",
-        "url:https://doi.org/10.1002/admt.71148",
-        "url:https://doi.org/10.1038/s41598-026-61984-8",
-        "url:https://doi.org/10.15680/ijircce.2026.1407029",
-        "url:https://arxiv.org/abs/2607.08956",
-        "url:https://arxiv.org/abs/2607.08053",
-        "url:https://doi.org/10.24061/2411-6181.1.2026.513",
-        "url:https://arxiv.org/abs/2607.08960",
-        "url:https://doi.org/10.7498/aps.75.20251448",
-        "url:https://doi.org/10.9734/jerr/2026/v28i71951",
-        "url:https://arxiv.org/abs/2607.08386",
-        "url:https://doi.org/10.25128/2078-2357.26.1.7",
-        "url:https://arxiv.org/abs/2607.08006",
-        "url:https://doi.org/10.1002/advs.76346",
-        "url:https://doi.org/10.1038/s41467-026-75242-y",
-        "url:https://doi.org/10.64898/2026.07.04.736487",
-        "url:https://doi.org/10.51583/ijltemas.2026.150600095",
-        "url:https://arxiv.org/abs/2607.08732",
-        "url:https://doi.org/10.3390/fractalfract10070461",
-        "url:https://doi.org/10.1021/acs.jcim.6c00544",
-        "url:https://doi.org/10.1098/rstb.2025.0239",
-        "url:https://doi.org/10.1371/journal.pone.0352431",
-        "url:https://doi.org/10.55041/ijcope.v2i7.107",
-        "url:https://doi.org/10.3390/s26144382",
-        "url:https://doi.org/10.3389/fmed.2026.1802352",
-        "url:https://doi.org/10.64898/2026.04.14.718401",
-        "url:https://doi.org/10.1177/25763113261460786",
-        "url:https://doi.org/10.64060/jestt3i24",
-        "url:https://doi.org/10.3390/computers15070439",
-        "url:https://doi.org/10.1177/09544070261463717",
-        "url:https://doi.org/10.36341/rabit.v11i2.8035",
-        "url:https://doi.org/10.3390/rs18142321",
-        "url:https://doi.org/10.36922/jcau026190033",
-        "url:https://doi.org/10.1007/s10291-026-02122-9",
-        "url:https://arxiv.org/abs/2607.12104",
-        "url:https://doi.org/10.1302/2046-3758.157.BJR-2026-0016.R1"
       ]
     }
   }
