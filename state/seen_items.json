@@ -1,7 +1,9 @@
 {
   "seen_items": {
     "arxiv-db-recent": {
-      "2026-09-18": [
+      "2026-09-19": [
+        "url:https://arxiv.org/abs/2609.07695v1",
+        "url:https://arxiv.org/abs/2609.07782v1",
         "url:https://arxiv.org/abs/2609.08015v1",
         "url:https://arxiv.org/abs/2609.08160v2",
         "url:https://arxiv.org/abs/2609.08184v1",
@@ -41,8 +43,6 @@
         "url:https://arxiv.org/abs/2609.15848v1",
         "url:https://arxiv.org/abs/2609.15885v1",
         "url:https://arxiv.org/abs/2609.16218v1",
-        "url:https://arxiv.org/abs/2609.16393v1",
-        "url:https://arxiv.org/abs/2609.16597v1",
         "url:https://arxiv.org/abs/2609.18135v1",
         "url:https://arxiv.org/abs/2609.18289v1",
         "url:https://arxiv.org/abs/2609.18501v1",
@@ -53,13 +53,15 @@
         "url:https://arxiv.org/abs/2609.20478v1",
         "url:https://arxiv.org/abs/2609.20489v1"
       ],
+      "2026-09-18": [
+        "url:https://arxiv.org/abs/2609.16393v1",
+        "url:https://arxiv.org/abs/2609.16597v1"
+      ],
       "2026-09-17": [
         "url:https://arxiv.org/abs/2609.06527v1",
         "url:https://arxiv.org/abs/2609.07199v1",
         "url:https://arxiv.org/abs/2609.07629v1",
-        "url:https://arxiv.org/abs/2609.07694v1",
-        "url:https://arxiv.org/abs/2609.07695v1",
-        "url:https://arxiv.org/abs/2609.07782v1"
+        "url:https://arxiv.org/abs/2609.07694v1"
       ],
       "2026-09-16": [
         "url:https://arxiv.org/abs/2609.05944v1",
@@ -203,7 +205,7 @@
       ]
     },
     "arxiv-db-systems-memory": {
-      "2026-09-18": [
+      "2026-09-19": [
         "url:https://arxiv.org/abs/2609.09108v1",
         "url:https://arxiv.org/abs/2609.09270v1",
         "url:https://arxiv.org/abs/2609.09748v1",
@@ -399,7 +401,7 @@
       ]
     },
     "arxiv-dc-execution-memory": {
-      "2026-09-18": [
+      "2026-09-19": [
         "url:https://arxiv.org/abs/2608.23955v2",
         "url:https://arxiv.org/abs/2608.24307v1",
         "url:https://arxiv.org/abs/2608.24348v1",
@@ -520,8 +522,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-09-18": [
-        "url:https://duckdb.org/2026/08/05/github-40k-stars.html",
+      "2026-09-19": [
         "url:https://duckdb.org/2026/08/17/duckdb-20-highlights.html",
         "url:https://duckdb.org/2026/08/18/reconciling-json.html",
         "url:https://duckdb.org/2026/08/20/duckdb-20-peg-parser.html",
@@ -530,7 +531,11 @@
         "url:https://duckdb.org/2026/08/25/how-duckdb-runs-recursive-ctes-faster.html",
         "url:https://duckdb.org/2026/08/26/ducklabs-to-join-aws.html",
         "url:https://duckdb.org/2026/09/02/try-duckdb-20-alpha.html",
-        "url:https://duckdb.org/2026/09/16/duckdb-skills.html"
+        "url:https://duckdb.org/2026/09/16/duckdb-skills.html",
+        "url:https://duckdb.org/2026/09/18/opfs-wasm.html"
+      ],
+      "2026-09-18": [
+        "url:https://duckdb.org/2026/08/05/github-40k-stars.html"
       ],
       "2026-09-16": [
         "url:https://duckdb.org/2026/07/31/asynchronous-io.html"
@@ -553,7 +558,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-09-18": [
+      "2026-09-19": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:https://doi.org/10.1186/s40537-021-00555-2",
@@ -561,7 +566,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-09-18": [
+      "2026-09-19": [
         "url:https://ir.cwi.nl/pub/17340",
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1702.01596",
@@ -2118,24 +2123,6 @@
         "url:https://doi.org/10.1145/3816713.3818222",
         "url:https://doi.org/10.1007/s11663-026-04132-x",
         "url:https://arxiv.org/abs/2608.16806"
-      ],
-      "2026-08-19": [
-        "url:https://doi.org/10.37385/jaets.v7i2.9418",
-        "url:https://doi.org/10.1038/s41598-026-46549-z",
-        "url:https://doi.org/10.1021/acs.jcim.6c00689",
-        "url:https://doi.org/10.1002/brv.70193",
-        "url:https://doi.org/10.59934/jaiea.v5i3.2457",
-        "url:https://doi.org/10.55041/ijcope.v2i6.185",
-        "url:https://doi.org/10.59934/jaiea.v5i3.2299",
-        "url:https://doi.org/10.1021/jasms.5c00428",
-        "url:https://doi.org/10.17921/2176-5634.2026v19n1p109-118",
-        "url:https://doi.org/10.1111/jnu.70104",
-        "url:https://doi.org/10.48550/arXiv.2606.17111",
-        "url:https://doi.org/10.1108/jedt-12-2025-0720",
-        "url:https://doi.org/10.1007/s00704-026-06363-z",
-        "url:https://doi.org/10.1037/ocp0000438",
-        "url:https://doi.org/10.56720/msbd.2026.s16.326",
-        "url:https://doi.org/10.62712/juktisi.v5i1.1167"
       ]
     },
     "semantic-scholar-systems-memory": {
