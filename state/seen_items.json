@@ -1,12 +1,7 @@
 {
   "seen_items": {
     "arxiv-db-recent": {
-      "2026-11-01": [
-        "url:https://arxiv.org/abs/2610.27019v1",
-        "url:https://arxiv.org/abs/2610.26849v1",
-        "url:https://arxiv.org/abs/2610.27306v1",
-        "url:https://arxiv.org/abs/2610.27508v1",
-        "url:https://arxiv.org/abs/2610.27626v1",
+      "2026-11-02": [
         "url:https://arxiv.org/abs/2610.27957v1",
         "url:https://arxiv.org/abs/2610.28223v1",
         "url:https://arxiv.org/abs/2610.28270v1",
@@ -51,6 +46,19 @@
         "url:https://arxiv.org/abs/2610.39017v1",
         "url:https://arxiv.org/abs/2610.39641v1",
         "url:https://arxiv.org/abs/2610.40579v1",
+        "url:https://arxiv.org/abs/2610.40620v2",
+        "url:https://arxiv.org/abs/2610.40812v1",
+        "url:https://arxiv.org/abs/2610.41407v1",
+        "url:https://arxiv.org/abs/2610.41669v1",
+        "url:https://arxiv.org/abs/2610.41755v1",
+        "url:https://arxiv.org/abs/2610.41918v1"
+      ],
+      "2026-11-01": [
+        "url:https://arxiv.org/abs/2610.27019v1",
+        "url:https://arxiv.org/abs/2610.26849v1",
+        "url:https://arxiv.org/abs/2610.27306v1",
+        "url:https://arxiv.org/abs/2610.27508v1",
+        "url:https://arxiv.org/abs/2610.27626v1",
         "url:https://arxiv.org/abs/2610.40620v1"
       ],
       "2026-10-29": [
@@ -259,12 +267,7 @@
       ]
     },
     "arxiv-db-systems-memory": {
-      "2026-11-01": [
-        "url:https://arxiv.org/abs/2610.28392v1",
-        "url:https://arxiv.org/abs/2610.28576v1",
-        "url:https://arxiv.org/abs/2610.28620v2",
-        "url:https://arxiv.org/abs/2610.28939v1",
-        "url:https://arxiv.org/abs/2610.29489v1",
+      "2026-11-02": [
         "url:https://arxiv.org/abs/2610.29503v2",
         "url:https://arxiv.org/abs/2610.29592v1",
         "url:https://arxiv.org/abs/2610.29689v1",
@@ -309,7 +312,19 @@
         "url:https://arxiv.org/abs/2610.39990v1",
         "url:https://arxiv.org/abs/2610.39999v1",
         "url:https://arxiv.org/abs/2610.40305v1",
-        "url:https://arxiv.org/abs/2610.40558v1"
+        "url:https://arxiv.org/abs/2610.40558v1",
+        "url:https://arxiv.org/abs/2610.41209v1",
+        "url:https://arxiv.org/abs/2610.41407v1",
+        "url:https://arxiv.org/abs/2610.41457v1",
+        "url:https://arxiv.org/abs/2610.41669v1",
+        "url:https://arxiv.org/abs/2610.41825v1"
+      ],
+      "2026-11-01": [
+        "url:https://arxiv.org/abs/2610.28392v1",
+        "url:https://arxiv.org/abs/2610.28576v1",
+        "url:https://arxiv.org/abs/2610.28620v2",
+        "url:https://arxiv.org/abs/2610.28939v1",
+        "url:https://arxiv.org/abs/2610.29489v1"
       ],
       "2026-10-29": [
         "url:https://arxiv.org/abs/2610.26472v1",
@@ -538,7 +553,7 @@
       ]
     },
     "arxiv-dc-execution-memory": {
-      "2026-11-01": [
+      "2026-11-02": [
         "url:https://arxiv.org/abs/2610.15755v2",
         "url:https://arxiv.org/abs/2610.16244v1",
         "url:https://arxiv.org/abs/2610.16374v1",
@@ -710,7 +725,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-11-01": [
+      "2026-11-02": [
         "url:https://duckdb.org/2026/09/29/jev.html",
         "url:https://duckdb.org/2026/10/02/dimension-tables.html",
         "url:https://duckdb.org/2026/10/05/import-data-with-java.html",
@@ -749,7 +764,7 @@
       ]
     },
     "openalex-db-execution": {
-      "2026-11-01": [
+      "2026-11-02": [
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.48550/arxiv.1502.07169",
         "url:https://doi.org/10.1186/s40537-021-00555-2",
@@ -757,7 +772,7 @@
       ]
     },
     "openalex-systems-memory": {
-      "2026-11-01": [
+      "2026-11-02": [
         "url:https://ir.cwi.nl/pub/17340",
         "url:https://doi.org/10.48550/arxiv.1302.2966",
         "url:https://doi.org/10.14778/3742728.3742762",
