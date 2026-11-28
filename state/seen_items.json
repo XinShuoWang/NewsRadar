@@ -1,7 +1,7 @@
 {
   "seen_items": {
     "arxiv-db-recent": {
-      "2026-11-27": [
+      "2026-11-28": [
         "url:https://arxiv.org/abs/2611.25128v1",
         "url:https://arxiv.org/abs/2611.25218v1",
         "url:https://arxiv.org/abs/2611.25416v1",
@@ -774,7 +774,7 @@
       ]
     },
     "duckdb-engineering-blog": {
-      "2026-11-27": [
+      "2026-11-28": [
         "url:https://duckdb.org/2026/10/26/gems-of-duckdb-200.html",
         "url:https://duckdb.org/2026/10/29/from-spreadsheets-to-ducklake.html",
         "url:https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop.html",
@@ -834,9 +834,7 @@
       ]
     },
     "semantic-scholar-db-engine": {
-      "2026-11-27": [
-        "url:https://doi.org/10.32743/unitech.2026.150.9.23376",
-        "url:https://doi.org/10.36548/jismac.2026.4.001",
+      "2026-11-28": [
         "url:https://doi.org/10.11648/j.iji.20261402.11",
         "url:https://doi.org/10.48550/arXiv.2609.34789",
         "url:https://doi.org/10.5121/ijnsa.2026.18503",
@@ -1814,6 +1812,8 @@
         "url:https://doi.org/10.1007/s10822-026-00980-6",
         "url:https://doi.org/10.14670/HH-25-181",
         "url:https://doi.org/10.1177/2752535X261507136",
+        "url:https://doi.org/10.1007/s43926-026-00527-z",
+        "url:https://doi.org/10.1007/s10103-026-05113-x",
         "url:https://doi.org/10.22214/ijraset.2026.85774",
         "url:https://doi.org/10.22214/ijraset.2026.85569",
         "url:https://doi.org/10.1016/j.iswa.2026.200754",
@@ -1835,6 +1835,10 @@
         "url:https://doi.org/10.1061/jcemd4.coeng-19355",
         "url:https://doi.org/10.1061/jmcee7.mteng-24266",
         "url:https://doi.org/10.58477/cj.v5i1.595"
+      ],
+      "2026-11-27": [
+        "url:https://doi.org/10.32743/unitech.2026.150.9.23376",
+        "url:https://doi.org/10.36548/jismac.2026.4.001"
       ],
       "2026-11-26": [
         "url:https://doi.org/10.1145/3837121",
